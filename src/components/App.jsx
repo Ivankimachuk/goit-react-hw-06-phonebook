@@ -1,8 +1,8 @@
 import React from "react";
-import { Form } from "./Form/Form"
-import { Filter } from "./Filter/Filter";
-import { ContactList } from "./ContactsList/ContactsList";
-import { Container }  from "./Emotion.styled"
+import  Form  from "./Form/Form";
+import  Filter  from './Filter/Filter';
+import  ContactList  from "./ContactsList/ContactsList"; 
+import { Container } from "components/Emotion.styled";
 
 import { useDispatch, useSelector } from "react-redux";
 import { addContacts, deleteContacts, filterIsChanged, selectContacts, selectFilter } from '../redux/appReducer';

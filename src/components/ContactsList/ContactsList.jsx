@@ -1,21 +1,32 @@
 import React from "react";
-import PropTypes from 'prop-types';
+import { useDispatch, useSelector } from "react-redux";
+import { deleteContacts } from "redux/appReducer";
 import { ContactLists, ContactItem, Btn } from "components/Emotion.styled";
 
-export const ContactList = ({ filterContacts, handleDelete }) => {
-    return(
-   <ContactLists >
-            {filterContacts.map(contact => 
+const ContactList = () => {
+  const filterContacts = useSelector((state) => {
+    const filter = state.appState.filter.toLowerCase();
+    return state.appState.contacts.filter(
+      (contact) => contact.name.toLowerCase().includes(filter)
+    );
+  });
 
-            <ContactItem  key={contact.id}>{contact.name}: {contact.number}
-            <Btn onClick={() => handleDelete(contact.id)}>Delete</Btn>
-            </ContactItem>)}
+  const dispatch = useDispatch();
 
-</ContactLists>)
-}
+  const handleDelete = (id) => {
+    dispatch(deleteContacts(id));
+  };
 
+  return (
+    <ContactLists>
+      {filterContacts.map((contact) => (
+        <ContactItem key={contact.id}>
+          {contact.name}: {contact.number}
+          <Btn onClick={() => handleDelete(contact.id)}>Delete</Btn>
+        </ContactItem>
+      ))}
+    </ContactLists>
+  );
+};
 
-ContactList.propTypes = {
-    filterContacts: PropTypes.arrayOf(PropTypes.object).isRequired,
-    handleDelete:  PropTypes.func.isRequired,
-}
+export default ContactList;
