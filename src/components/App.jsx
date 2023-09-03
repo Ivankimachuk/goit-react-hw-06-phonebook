@@ -45,10 +45,10 @@ export function App() {
   return (
     <Container>
         <h1>Phonebook</h1>
-          <Form onSubmit={handleSubmit}/>
+        <Form />
         <h2>Contacts</h2>
-        <Filter value={filter} onChange={changeFilter}/>
-        <ContactList filterContacts={getFilteredContacts()} handleDelete={handleDelete} />
+        <Filter />
+        <ContactList  />
       </Container>
   )
 
