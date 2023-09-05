@@ -46,7 +46,7 @@ border-radius: 20px;
 font-size: 18px;
 padding: 10px;
 `
-export const ContactLists = styled.ul`
+export const ContainerList = styled.ul`
 display: flex;
 flex-direction: column;
 gap: 20px;

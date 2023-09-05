@@ -4,7 +4,7 @@ import { addContacts } from "redux/appReducer";
 import { nanoid } from "nanoid";
 import { Button, FormContainer, Label, Input } from "components/Emotion.styled";
 
-const Form = () => {
+export const Form = () => {
   const [name, setName] = useState("");
   const [number, setNumber] = useState("");
   const dispatch = useDispatch();
@@ -59,4 +59,5 @@ const Form = () => {
   );
 };
 
-export default Form;
+
+

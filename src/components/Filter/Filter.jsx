@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { filterIsChanged } from "redux/appReducer";
 import { Label, Input } from "components/Emotion.styled";
 
-const Filter = () => {
+export const Filter = () => {
   const filter = useSelector((state) => state.appState.filter);
   const dispatch = useDispatch();
 
@@ -19,4 +19,5 @@ const Filter = () => {
   );
 };
 
-export default Filter;
+
+
